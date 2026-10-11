@@ -1,0 +1,3 @@
+./generate_asm "$1" > "${1%.lat}.s"
+g++ -c "${1%.lat}.s" -o "${1%.lat}.o"
+g++ -o "${1%.lat}" runtime/runtime.o "${1%.lat}.o"
