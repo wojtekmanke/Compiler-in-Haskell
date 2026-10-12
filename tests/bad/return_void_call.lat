@@ -1,0 +1,6 @@
+// error: a `void` function cannot return a value
+void g() { }
+
+void f() { return g(); }
+
+int main() { return 0; }

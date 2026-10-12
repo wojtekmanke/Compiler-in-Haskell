@@ -1,0 +1,14 @@
+// Strings are kept in stack slots across loops and calls.
+int main() {
+  string s = "hello";
+  int i = 0;
+  while (i < 2) {
+    printString(s);
+    i++;
+  }
+  string joined = readString() + readString();
+  printString(joined);
+  // At the end of input, readString returns the empty string.
+  printString(readString());
+  return 0;
+}

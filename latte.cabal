@@ -1,0 +1,51 @@
+cabal-version:      2.4
+name:               latte
+version:            1.0.0
+synopsis:           A compiler from Latte to x86-64 assembly
+description:
+  Compiles Latte, a small Java-like imperative language with arrays and
+  structs, to x86-64 assembly for Linux.
+category:           Compilers
+author:             Wojciech Mańke
+build-type:         Simple
+extra-doc-files:    README.md
+extra-source-files: grammar/Latte.cf
+                    runtime/runtime.c
+
+common shared
+  default-language: Haskell2010
+  ghc-options:      -Wall -Wcompat -Widentities -Wredundant-constraints
+                    -Wincomplete-record-updates -Wincomplete-uni-patterns
+  build-depends:    base >=4.16 && <5
+
+library
+  import:             shared
+  hs-source-dirs:     src
+  exposed-modules:    Latte.Compiler
+                      Latte.Error
+                      Latte.Types
+                      Latte.Layout
+                      Latte.Core
+                      Latte.Frontend
+                      Latte.Frontend.ConstFold
+                      Latte.Frontend.TypeCheck
+                      Latte.Quadruples
+                      Latte.Quadruples.Generate
+                      Latte.Quadruples.Liveness
+                      Latte.Backend.Asm
+                      Latte.Backend.X86_64
+                      -- Generated from grammar/Latte.cf by BNFC.
+                      Latte.Abs
+                      Latte.Lex
+                      Latte.Par
+  build-depends:      array      >=0.5 && <0.6
+                    , containers >=0.6 && <0.9
+                    , mtl        >=2.2 && <2.4
+  build-tool-depends: alex:alex   >=3.2
+                    , happy:happy >=1.19
+
+executable latc
+  import:         shared
+  hs-source-dirs: app
+  main-is:        Main.hs
+  build-depends:  latte

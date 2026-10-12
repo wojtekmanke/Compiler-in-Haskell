@@ -1,0 +1,5 @@
+// error: `+` needs operands of type `int` or `string`, found `boolean`
+int main() {
+  boolean b = true + false;
+  return 0;
+}

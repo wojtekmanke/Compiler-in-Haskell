@@ -1,0 +1,37 @@
+// Arrays of arrays, arrays in objects and objects in arrays.
+class Box {
+  int[] items;
+  string[] names;
+  Box inner;
+}
+
+int main() {
+  int[][] m = new int[][2];
+  m[0] = new int[3];
+  m[1] = new int[3];
+  m[1][2] = 6;
+  printInt(m[1][2]);
+  printInt(m[1].length);
+  printInt(m.length);
+  Box b = new Box;
+  b.names = new string[2];
+  b.names[0] = "x";
+  b.names[1] = "y";
+  printString(b.names[0] + b.names[1]);
+  b.inner = new Box;
+  b.inner.items = new int[2];
+  b.inner.items[1] = 5;
+  b.inner.items[1]++;
+  printInt(b.inner.items[1]);
+  printInt(b.inner.items.length);
+  Box[] boxes = new Box[2];
+  boxes[0] = b;
+  boxes[1] = b.inner;
+  printInt(boxes[1].items[1]);
+  int total = 0;
+  for (int[] row : m)
+    for (int cell : row)
+      total = total + cell;
+  printInt(total);
+  return 0;
+}

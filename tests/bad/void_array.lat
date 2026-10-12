@@ -1,0 +1,5 @@
+// error: `void` can only be the return type of a function
+int main() {
+  void[] a = new void[3];
+  return 0;
+}

@@ -1,0 +1,4 @@
+// error: `x` is already defined as a parameter
+int f(int x, string x) { return x; }
+
+int main() { return 0; }

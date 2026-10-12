@@ -1,0 +1,4 @@
+# Generated from grammar/Latte.cf by BNFC (make grammar).
+src/Latte/Abs.hs linguist-generated=true
+src/Latte/Lex.x  linguist-generated=true
+src/Latte/Par.y  linguist-generated=true

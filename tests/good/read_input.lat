@@ -1,0 +1,14 @@
+// readInt leaves the rest of its line to the next read, unless the rest is
+// blank; readString reads a whole line.
+int main() {
+  int a = readInt();
+  int b = readInt();
+  printInt(a + b);
+  printInt(readInt());
+  printString(readString());
+  printString(readString());
+  printInt(readInt());
+  printString("[" + readString() + "]");
+  printString("[" + readString() + "]");
+  return 0;
+}

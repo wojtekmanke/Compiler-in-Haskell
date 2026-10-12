@@ -1,0 +1,4 @@
+// error: the function must return a value of type `int`
+int f() { return; }
+
+int main() { return 0; }

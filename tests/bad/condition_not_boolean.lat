@@ -1,0 +1,5 @@
+// error: expected an expression of type `boolean`, found `int`
+int main() {
+  while (1) { }
+  return 0;
+}

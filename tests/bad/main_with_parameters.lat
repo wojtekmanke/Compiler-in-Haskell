@@ -1,0 +1,2 @@
+// error: `main` must be declared as `int main()`
+int main(int argc) { return 0; }

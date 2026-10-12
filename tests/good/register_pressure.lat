@@ -1,0 +1,17 @@
+// More values are needed at once than there are registers.
+int id(int x) { return x; }
+
+int sum9(int a, int b, int c, int d, int e, int f, int g, int h, int i) {
+  return a + b + c + d + e + f + g + h + i;
+}
+
+int main() {
+  int a = 1, b = 2, c = 3, d = 4, e = 5, f = 6, g = 7, h = 8, i = 9, j = 10, k = 11, l = 12;
+  printInt(a + b + c + d + e + f + g + h + i + j + k + l);
+  printInt((a + b) * (c + d) - (e + f) * (g + h) + (i + j) * (k + l));
+  printInt(((a * b + c * d) * (e * f + g * h)) - ((i * j + k * l) * (a * l + b * k)));
+  printInt(sum9(a, b, c, d, e, f, g, h, i));
+  printInt(sum9(id(a), b * 2, id(c) + id(d), d, e - id(f), f, g, id(h) * id(i), l));
+  printInt(id(a) + (id(b) + (id(c) + (id(d) + (id(e) + (id(f) + (id(g) + id(h))))))));
+  return 0;
+}

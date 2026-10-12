@@ -1,22 +1,30 @@
+-- Grammar of Latte (core language + arrays + structs), in LBNF.
+--
+-- The lexer, parser and abstract syntax in src/Latte/{Lex.x,Par.y,Abs.hs} are
+-- generated from this file by BNFC; run `make grammar` after changing it.
+--
+-- The generated LALR(1) parser has two shift/reduce conflicts. Both are benign
+-- and resolved in favour of shifting, which is the intended reading:
+--   * the dangling `else`, which binds to the nearest `if`;
+--   * `new T [`, which starts an array allocation rather than indexing `new T`.
+
 -- programs ------------------------------------------------
 
 entrypoints Program ;
 
-Program.   Program ::= [ClassDef] [TopDef] ;
+Program.   Program ::= [TopDef] ;
 
-ClDef.     ClassDef ::= "class" Ident "{" [ClassEl] "}" ;
+FnDef.     TopDef ::= Type Ident "(" [Arg] ")" Block ;
 
-separator ClassDef "" ;
-
-ClElem.    ClassEl ::= Type Ident ;
-
-separator ClassEl ";" ;
-
-FnDef.	   TopDef ::= Type Ident "(" [Arg] ")" Block ;
+ClDef.     TopDef ::= "class" Ident "{" [ClassEl] "}" ;
 
 separator nonempty TopDef "" ;
 
-Arg. 	   Arg ::= Type Ident;
+ClElem.    ClassEl ::= Type Ident ;
+
+terminator ClassEl ";" ;
+
+Arg.       Arg ::= Type Ident ;
 
 separator  Arg "," ;
 
@@ -70,8 +78,7 @@ Void.      Type ::= "void" ;
 
 ClassT.    Type ::= Ident ;
 
-Array.     Type ::= Type "[]";
-
+Array.     Type ::= Type "[]" ;
 
 -- Expressions ---------------------------------------------
 
@@ -85,9 +92,13 @@ EApp.      Expr7 ::= Ident "(" [Expr] ")" ;
 
 EField.    Expr7 ::= Expr7 "." Ident ;
 
-EArrayItem.Expr7 ::= Expr7 "[" Expr "]" ;
+EArrayItem. Expr7 ::= Expr7 "[" Expr "]" ;
 
-ENull.     Expr6 ::= "(" Ident ")" "null" ;
+-- A null reference is written as a cast, `(C)null`. The cast is parsed as a
+-- parenthesised expression because `"(" Ident ")"` would make every
+-- parenthesised variable, such as `(x) + 1`, a syntax error in an LALR(1)
+-- parser; the type checker verifies that the expression is a class name.
+ENull.     Expr6 ::= "(" Expr ")" "null" ;
 
 ELitInt.   Expr6 ::= Integer ;
 

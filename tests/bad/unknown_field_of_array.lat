@@ -1,0 +1,6 @@
+// error: `int[]` has no field `size`
+int main() {
+  int[] a = new int[2];
+  a.size = 1;
+  return 0;
+}

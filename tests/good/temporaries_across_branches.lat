@@ -1,0 +1,25 @@
+// The result of a call stays available while a later operand is evaluated
+// with jumps.
+int id(int x) { return x; }
+
+int toInt(boolean b) {
+  if (b) return 1;
+  return 0;
+}
+
+boolean isPositive(int x) { return x > 0; }
+
+string pick(boolean b) {
+  if (b) return "yes";
+  else return "no";
+}
+
+int main() {
+  int a = 1;
+  int b = 2;
+  printInt(id(10) + toInt(a < b));
+  printInt(id(3) * toInt(a > b || isPositive(b)) - id(4));
+  string s = "x";
+  printString(s + s + pick(a < b && isPositive(a)));
+  return 0;
+}

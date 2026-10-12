@@ -1,0 +1,5 @@
+// error: unknown class `Foo`
+int main() {
+  Foo x;
+  return 0;
+}

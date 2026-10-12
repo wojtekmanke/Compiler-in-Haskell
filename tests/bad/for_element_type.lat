@@ -1,0 +1,5 @@
+// error: expected an expression of type `string[]`, found `int[]`
+int main() {
+  for (string s : new int[2]) printString(s);
+  return 0;
+}

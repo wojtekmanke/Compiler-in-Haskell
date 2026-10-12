@@ -1,0 +1,18 @@
+// Strings are compared by content.
+int main() {
+  string a = "ab";
+  string b = "a";
+  b = b + "b";
+  if (a == b) printString("equal");
+  else printString("different");
+  if (a != b) printString("different");
+  else printString("equal");
+  if (a == "abc") printString("equal");
+  else printString("different");
+  string empty;
+  if (empty == "") printString("empty");
+  if (readString() == "yes") printString("read yes");
+  boolean same = a == b;
+  if (same) printString("stored");
+  return 0;
+}

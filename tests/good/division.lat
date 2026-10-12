@@ -1,0 +1,29 @@
+// Division and remainder with the operands in every possible place.
+int id(int x) { return x; }
+
+int main() {
+  int a = 17;
+  int b = 5;
+  printInt(a / b);
+  printInt(a % b);
+  printInt(b / a);
+  printInt(a / a);
+  printInt(a % a);
+  printInt(100 / b);
+  printInt(a / 3);
+  printInt(a % 3);
+  printInt(a / b / 2);
+  printInt((a / b) % (b / 2));
+  printInt(a * b / (a - b) % 7);
+  printInt(id(a) / id(b) + id(a) % id(b));
+  printInt(-a / b);
+  printInt(-a % b);
+  int q = a / b;
+  int r = a % b;
+  printInt(q * b + r);
+  a = a / b;
+  b = a % b;
+  printInt(a);
+  printInt(b);
+  return 0;
+}

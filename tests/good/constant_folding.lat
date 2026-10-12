@@ -1,0 +1,21 @@
+// Expressions folded by the compiler give the same results as the ones
+// computed at run time.
+int main() {
+  int a = 0 - 7;
+  int b = 2;
+  printInt((0 - 7) / 2);
+  printInt(a / b);
+  printInt((0 - 7) % 2);
+  printInt(a % b);
+  printInt(7 / (0 - 2));
+  printInt(7 % (0 - 2));
+  int max = 2147483647;
+  printInt(2147483647 + 1);
+  printInt(max + 1);
+  printInt(-2147483648);
+  printInt(65536 * 65536);
+  printInt(-(-5));
+  if (!false && 2 * 3 == 6 || false) printString("folded");
+  printString("con" + "cat");
+  return 0;
+}

@@ -1,0 +1,9 @@
+int main() {
+  printString("tab:\there");
+  printString("quote:\" backslash:\\");
+  printString("two\nlines");
+  printString("zażółć gęślą jaźń");
+  printString("100%d");
+  printString("");
+  return 0;
+}

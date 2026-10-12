@@ -1,0 +1,4 @@
+// error: the function returns `int`, but this value has type `string`
+int f() { return "one"; }
+
+int main() { return 0; }

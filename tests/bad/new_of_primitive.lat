@@ -1,0 +1,5 @@
+// error: `new` needs a class; an array is created with `new T[size]`
+int main() {
+  int x = new int;
+  return 0;
+}

@@ -1,0 +1,4 @@
+// error: unknown class `Missing`
+class A { Missing m; }
+
+int main() { return 0; }

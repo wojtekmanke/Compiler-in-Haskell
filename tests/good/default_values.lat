@@ -1,0 +1,34 @@
+// Variables, fields and array elements start out as 0, false, the empty
+// string or null.
+class Node {
+  int value;
+  Node next;
+  string label;
+  boolean flag;
+}
+
+void show(boolean b) {
+  if (b) printString("true");
+  else printString("false");
+}
+
+int main() {
+  int i;
+  boolean b;
+  string s;
+  printInt(i);
+  show(b);
+  printString(s + "|");
+  Node n = new Node;
+  printInt(n.value);
+  if (n.next == (Node)null) printString("null");
+  printString(n.label + "|");
+  show(n.flag);
+  int[] numbers = new int[3];
+  for (int x : numbers) printInt(x);
+  string[] names = new string[2];
+  printString(names[1] + "|");
+  Node[] nodes = new Node[2];
+  if (nodes[0] == (Node)null) printString("null");
+  return 0;
+}

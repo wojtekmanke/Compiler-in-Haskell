@@ -1,0 +1,7 @@
+// error: `null` must be cast to a class, as in `(C)null`
+class C { int x; }
+
+int main() {
+  C c = (1 + 2)null;
+  return 0;
+}

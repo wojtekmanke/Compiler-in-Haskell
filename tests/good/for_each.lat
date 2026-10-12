@@ -1,0 +1,21 @@
+int main() {
+  int[] a = new int[3];
+  a[0] = 1;
+  a[1] = 2;
+  a[2] = 3;
+  // The loop variable is a copy of the element.
+  for (int x : a) {
+    x = x * 10;
+    printInt(x);
+  }
+  for (int x : a) printInt(x);
+  // The array is evaluated once, before the first iteration.
+  int[] b = a;
+  for (int x : b) {
+    b = new int[1];
+    printInt(x);
+  }
+  printInt(b.length);
+  for (int x : new int[0]) printString("never");
+  return 0;
+}

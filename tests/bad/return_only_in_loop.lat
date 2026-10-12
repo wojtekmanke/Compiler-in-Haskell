@@ -1,0 +1,8 @@
+// error: function `f` can finish without returning a value
+int f(int x) {
+  while (x > 0) {
+    return 1;
+  }
+}
+
+int main() { return f(1); }

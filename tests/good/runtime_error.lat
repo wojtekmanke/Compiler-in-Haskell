@@ -1,0 +1,7 @@
+// error() ends the program; what was printed before it is not lost.
+int main() {
+  printString("before");
+  if (readInt() == 0) error();
+  printString("after");
+  return 0;
+}

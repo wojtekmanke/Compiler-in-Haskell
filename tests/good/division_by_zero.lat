@@ -1,0 +1,10 @@
+// Division by zero is not checked: the processor stops the program with
+// SIGFPE, which the shell reports as status 128 + 8. What the program
+// printed before that is not lost.
+int main() {
+  printString("before");
+  int zero = readInt();
+  printInt(1 / zero);
+  printString("after");
+  return 0;
+}

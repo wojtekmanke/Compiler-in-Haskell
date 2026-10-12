@@ -1,0 +1,2 @@
+// error: unknown function `g`
+int main() { return g(); }

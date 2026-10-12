@@ -1,0 +1,7 @@
+// error: `f` is already defined as a function
+int f() { return 1; }
+
+int main() {
+  int f = 2;
+  return 0;
+}

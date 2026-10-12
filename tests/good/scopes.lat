@@ -1,0 +1,42 @@
+int main() {
+  int x = 1;
+  string s = "outer";
+  {
+    string x = "inner";
+    printString(x);
+    int s = 2;
+    printInt(s);
+    {
+      boolean x = true;
+      if (x) printString("innermost");
+    }
+    printString(x);
+  }
+  printInt(x);
+  printString(s);
+  // A declaration that is the whole body of an `if` is local to it.
+  if (x == 1) int x = 5;
+  printInt(x);
+  int y = x + 1;
+  {
+    // The initialiser still refers to the outer variable.
+    int y = y + 10;
+    printInt(y);
+  }
+  printInt(y);
+  int[] items = new int[2];
+  items[1] = 7;
+  for (int item : items) {
+    int doubled = item * 2;
+    printInt(doubled);
+  }
+  int i = 0;
+  while (i < 2) {
+    // Initialised anew in every iteration.
+    int fresh;
+    fresh++;
+    printInt(fresh);
+    i++;
+  }
+  return 0;
+}

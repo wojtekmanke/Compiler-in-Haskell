@@ -1,0 +1,35 @@
+// Functions whose last statement is not a `return`, because control cannot
+// get past it.
+int firstAbove(int limit) {
+  int i = 0;
+  while (true) {
+    i++;
+    if (i * i > limit) return i;
+  }
+}
+
+int checked(int x) {
+  if (x >= 0) return x;
+  error();
+}
+
+int constant() {
+  if (true) return 7;
+}
+
+void early(int x) {
+  if (x > 0) {
+    printString("positive");
+    return;
+  }
+  printString("other");
+}
+
+int main() {
+  printInt(firstAbove(50));
+  printInt(checked(4));
+  printInt(constant());
+  early(1);
+  early(0);
+  return 0;
+}

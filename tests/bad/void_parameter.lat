@@ -1,0 +1,4 @@
+// error: `void` can only be the return type of a function
+void f(void x) { }
+
+int main() { return 0; }

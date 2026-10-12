@@ -1,0 +1,6 @@
+// error: `++` and `--` need an operand of type `int`, found `string`
+int main() {
+  string s;
+  s++;
+  return 0;
+}

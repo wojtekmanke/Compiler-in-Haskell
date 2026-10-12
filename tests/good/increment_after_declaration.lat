@@ -1,0 +1,11 @@
+// A variable is modified in the block that declares it.
+int main() {
+  int x = 5;
+  x++;
+  printInt(x);
+  int y;
+  y--;
+  y--;
+  printInt(y);
+  return 0;
+}

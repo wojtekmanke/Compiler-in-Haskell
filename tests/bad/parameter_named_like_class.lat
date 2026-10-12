@@ -1,0 +1,6 @@
+// error: `Point` is already defined as a class
+class Point { int x; }
+
+int f(int Point) { return Point; }
+
+int main() { return 0; }

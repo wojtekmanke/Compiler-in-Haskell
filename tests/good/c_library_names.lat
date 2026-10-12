@@ -1,0 +1,30 @@
+// Functions and parameters may have names that mean something to the
+// assembler or to the C library the program is linked with.
+int strlen(string s) { return 7; }
+
+int malloc(int size) { return size * 2; }
+
+void free(int x) { printInt(x); }
+
+int L1() { return 1; }
+
+int exit(int t0, int t1) {
+  int x = 5;
+  return t0 + t1 + x;
+}
+
+int rax(int rdi) { return rdi; }
+
+int main() {
+  printInt(strlen("abc"));
+  printInt(malloc(21));
+  free(3);
+  if (L1() == 1) printString("label");
+  printInt(exit(1, 2));
+  printInt(rax(4));
+  string s = "abc";
+  printString(s + "def");
+  int[] a = new int[2];
+  printInt(a.length);
+  return 0;
+}

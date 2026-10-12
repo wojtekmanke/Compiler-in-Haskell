@@ -1,0 +1,2 @@
+// error: the program has no `main` function
+int f() { return 0; }

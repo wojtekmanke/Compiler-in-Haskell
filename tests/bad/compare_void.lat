@@ -1,0 +1,7 @@
+// error: a `void` expression has no value to compare
+void g() { }
+
+int main() {
+  if (g() == g()) return 1;
+  return 0;
+}

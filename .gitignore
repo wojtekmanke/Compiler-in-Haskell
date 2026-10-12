@@ -1,0 +1,13 @@
+# Build products
+/dist-newstyle/
+/latc
+*.o
+*.hi
+
+# Output of compiling the test programs in place
+/tests/**/*.s
+
+# Editors and operating systems
+.DS_Store
+*.swp
+*~

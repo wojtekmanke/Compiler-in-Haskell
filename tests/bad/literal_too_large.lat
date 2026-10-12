@@ -1,0 +1,5 @@
+// error: the literal 2147483648 does not fit in a 32-bit `int`
+int main() {
+  int x = 2147483648;
+  return 0;
+}

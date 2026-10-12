@@ -1,0 +1,9 @@
+// error: `x` is already defined as a variable in this block
+int main() {
+  int x;
+  {
+    int x;
+  }
+  string x;
+  return 0;
+}

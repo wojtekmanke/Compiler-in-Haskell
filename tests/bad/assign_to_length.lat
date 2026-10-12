@@ -1,0 +1,6 @@
+// error: the length of an array cannot be changed
+int main() {
+  int[] a = new int[2];
+  a.length = 5;
+  return 0;
+}

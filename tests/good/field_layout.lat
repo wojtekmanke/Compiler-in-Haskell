@@ -1,0 +1,34 @@
+// Fields of different sizes do not overlap, whatever their order.
+class Mixed {
+  int a;
+  Mixed link;
+  boolean b;
+  string s;
+  int c;
+  int[] items;
+  boolean d;
+}
+
+int main() {
+  Mixed m = new Mixed;
+  m.a = 1;
+  m.b = true;
+  m.c = 3;
+  m.d = true;
+  m.s = "text";
+  m.items = new int[1];
+  m.link = m;
+  m.a = -1;
+  m.c = 2147483647;
+  m.a--;
+  m.c++;
+  printInt(m.a);
+  if (m.b) printString("b");
+  printInt(m.c);
+  if (m.d) printString("d");
+  printString(m.s);
+  printInt(m.items.length);
+  if (m.link == m) printString("self");
+  printInt(m.link.link.a);
+  return 0;
+}

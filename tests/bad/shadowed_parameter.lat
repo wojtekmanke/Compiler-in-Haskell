@@ -1,0 +1,9 @@
+// error: `a` is already defined as a parameter of this function
+int f(int a) {
+  if (a != 0) {
+    int a = 7;
+  }
+  return a;
+}
+
+int main() { return f(1); }

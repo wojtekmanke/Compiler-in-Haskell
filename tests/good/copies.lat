@@ -1,0 +1,24 @@
+// A copy of a variable keeps its value when the original changes.
+int main() {
+  int x = 5;
+  int y = x;
+  x++;
+  printInt(x);
+  printInt(y);
+  int z = y;
+  y = y * 2;
+  z--;
+  printInt(y);
+  printInt(z);
+  string s = "a";
+  string t = s;
+  s = s + "b";
+  printString(s);
+  printString(t);
+  // Arrays are shared, not copied.
+  int[] a = new int[1];
+  int[] b = a;
+  b[0] = 9;
+  printInt(a[0]);
+  return 0;
+}

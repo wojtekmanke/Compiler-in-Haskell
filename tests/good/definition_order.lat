@@ -1,0 +1,16 @@
+// Classes and functions can be defined in any order.
+int main() {
+  Point p = origin();
+  p.x = 3;
+  printInt(norm(p));
+  return 0;
+}
+
+class Point {
+  int x;
+  int y;
+}
+
+Point origin() { return new Point; }
+
+int norm(Point p) { return p.x * p.x + p.y * p.y; }

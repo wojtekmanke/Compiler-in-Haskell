@@ -1,0 +1,18 @@
+class Box { int value; }
+
+int twice(int n) { return (n) + (n); }
+
+int main() {
+  int x = 3;
+  int y = (x) + 1;
+  printInt(y);
+  printInt((y));
+  Box box = new Box;
+  (box).value = 9;
+  int[] a = new int[2];
+  (a)[0] = (box).value;
+  printInt((a)[0]);
+  printInt(twice(x));
+  if ((box) != (Box)null) printString("not null");
+  return ((x)) - 3;
+}

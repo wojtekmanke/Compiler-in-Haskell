@@ -1,0 +1,10 @@
+// error: expected an expression of type `int`, found `string`
+void f(int a, string s) {
+  printInt(a);
+  printString(s);
+}
+
+int main() {
+  f("x", 1);
+  return 0;
+}

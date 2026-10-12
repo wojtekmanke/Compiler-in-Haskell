@@ -1,0 +1,5 @@
+// The value returned from main is the exit status of the program.
+int main() {
+  printInt(readInt());
+  return 3;
+}

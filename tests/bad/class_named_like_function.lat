@@ -1,0 +1,6 @@
+// error: `f` is already defined as a class
+class f { int x; }
+
+int f() { return 1; }
+
+int main() { return 0; }

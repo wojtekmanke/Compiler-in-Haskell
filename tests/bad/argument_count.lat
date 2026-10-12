@@ -1,0 +1,4 @@
+// error: function `f` takes 2 argument(s), but 1 were given
+int f(int a, int b) { return a + b; }
+
+int main() { return f(1); }

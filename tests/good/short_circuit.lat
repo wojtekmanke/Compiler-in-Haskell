@@ -1,0 +1,24 @@
+// `&&` and `||` evaluate their right operand only when it decides the result.
+boolean side() {
+  printString("side");
+  return true;
+}
+
+void show(boolean b) {
+  if (b) printString("true");
+  else printString("false");
+}
+
+int main() {
+  boolean t = true;
+  boolean f = false;
+  show(f && side());
+  show(t || side());
+  show(t && side());
+  show(!t);
+  show(!(f || f) && (1 < 2) == t);
+  int x = 3;
+  if (x > 1 && x < 5 || f) printInt(7);
+  show(f || !side() || t);
+  return 0;
+}
